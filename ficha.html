@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Dentária</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #555;
+}
+
+h3 {
+    text-align: center;
+    color: #777;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.dental-chart {
+    margin-top: 20px;
+}
+
+.teeth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quadrant {
+    margin: 10px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.tooth {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooth:hover {
+    background-color: #e0e0e0;
+}
+
+.tooth.active {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.tooth-label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha Dentária</h1>
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome do Paciente:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="data-nasc">Data de Nascimento:</label>
+                <input type="date" id="data-nasc" name="data-nasc" required>
+            </div>
+            <div class="form-group">
+                <label for="estado-civil">Estado Civil:</label>
+                <input type="text" id="estado-civil" name="estado-civil" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="convenio">Convênio:</label>
+                <input type="text" id="convenio" name="convenio" required>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alergia">Alergia:</label>
+                <textarea id="alergia" name="alergia" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sensibilidade-med">Sensibilidade a Medicamentos:</label>
+                <input type="checkbox" id="sensibilidade-med" name="sensibilidade-med">
+            </div>
+            <div class="form-group">
+                <label for="pressao-sanguinia">Pressão Sanguínea Alta:</label>
+                <input type="checkbox" id="pressao-sanguinia" name="pressao-sanguinia">
+            </div>
+            <div class="form-group">
+                <label for="tomando-med">Tomando Medicamentos:</label>
+                <input type="checkbox" id="tomando-med" name="tomando-med">
+            </div>
+            <div class="form-group">
+                <label for="problemas-saude">Problemas de Saúde:</label>
+                <textarea id="problemas-saude" name="problemas-saude" rows="2"></textarea>
+            </div>
+            <div class="dental-chart">
+                <h2>Mapa Dentário</h2>
+                <div class="teeth">
+                    <!-- Quadrantes Superiores -->
+                    <div class="quadrant">
+                        <h3>Quadrante Superior Direito</h3>
+                        <div class="row">
+                            <div class="tooth" id="tooth-18" data-tooth="18"></div>
+                            <div class="tooth" id="tooth-17" data-tooth="17"></div>
+                            <div class="tooth" id="tooth-16" data-tooth="16"></div>
+                            <div class="tooth" id="tooth-15" data-tooth="15"></div>
+                            <div class="tooth" id="tooth-14" data-tooth="14"></div>
+                            <div class="tooth" id="tooth-13" data-tooth="13"></div>
+                            <div class="tooth" id="tooth-12" data-tooth="12"></div>
+                            <div class="tooth" id="tooth-11" data-tooth="11"></div>
+                        </div>
+                    </div>
+                    <div class="quadrant">
+                        <h3>Quadrante Superior Esquerdo</h3>
+                        <div class="row">
+                            <div class="tooth" id="tooth-21" data-tooth="21"></div>
+                            <div class="tooth" id="tooth-22" data-tooth="22"></div>
+                            <div class="tooth" id="tooth-23" data-tooth="23"></div>
+                            <div class="tooth" id="tooth-24" data-tooth="24"></div>
+                            <div class="tooth" id="tooth-25" data-tooth="25"></div>
+                            <div class="tooth" id="tooth-26" data-tooth="26"></div>
+                            <div class="tooth" id="tooth-27" data-tooth="27"></div>
+                            <div class="tooth" id="tooth-28" data-tooth="28"></div>
+                        </div>
+                    </div>
+                    <!-- Quadrantes Inferiores -->
+                    <div class="quadrant">
+                        <h3>Quadrante Inferior Direito</h3>
+                        <div class="row">
+                            <div class="tooth" id="tooth-48" data-tooth="48"></div>
+                            <div class="tooth" id="tooth-47" data-tooth="47"></div>
+                            <div class="tooth" id="tooth-46" data-tooth="46"></div>
+                            <div class="tooth" id="tooth-45" data-tooth="45"></div>
+                            <div class="tooth" id="tooth-44" data-tooth="44"></div>
+                            <div class="tooth" id="tooth-43" data-tooth="43"></div>
+                            <div class="tooth" id="tooth-42" data-tooth="42"></div>
+                            <div class="tooth" id="tooth-41" data-tooth="41"></div>
+                        </div>
+                    </div>
+                    <div class="quadrant">
+                        <h3>Quadrante Inferior Esquerdo</h3>
+                        <div class="row">
+                            <div class="tooth" id="tooth-31" data-tooth="31"></div>
+                            <div class="tooth" id="tooth-32" data-tooth="32"></div>
+                            <div class="tooth" id="tooth-33" data-tooth="33"></div>
+                            <div class="tooth" id="tooth-34" data-tooth="34"></div>
+                            <div class="tooth" id="tooth-35" data-tooth="35"></div>
+                            <div class="tooth" id="tooth-36" data-tooth="36"></div>
+                            <div class="tooth" id="tooth-37" data-tooth="37"></div>
+                            <div class="tooth" id="tooth-38" data-tooth="38"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="observacoes">Observações:</label>
+                <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="historico">Histórico do Paciente:</label>
+                <textarea id="historico" name="historico" rows="4"></textarea>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const teeth = document.querySelectorAll('.tooth');
+
+    teeth.forEach(tooth => {
+        tooth.addEventListener('click', () => {
+            tooth.classList.toggle('active');
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

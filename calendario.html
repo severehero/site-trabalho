@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Responsivo</title>
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .wrapper {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .days-week, .number-days {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .days-week {
+            background-color: greenyellow;
+            padding: 10px 0;
+            border-bottom: 1px solid white;
+        }
+
+        .days-week span, .number-days span {
+            width: 13%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .number-days span {
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .mes-anterior, .proximo-mes {
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .days-week span, .number-days span {
+                width: 13.5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .days-week span, .number-days span {
+                width: 14%;
+            }
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+    <link rel="stylesheet" href="path/to/your/css/styles.css">
+</head>
+<body>
+    <!-- Cabeçalho e navegação -->
+    <div class="py-md-5 py-4 border-bottom">
+        <div class="container">
+          <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+            <div class="col-md-4 order-md-2 mb-2 mb-md-0 align-items-center text-center">
+              <a class="navbar-brand" href="index.html">Dentista<span>Clínica Dentária</span></a>
+            </div>
+            <div class="col-md-4 order-md-1 d-flex topper mb-md-0 mb-2 align-items-center text-md-right">
+              <div class="icon d-flex justify-content-center align-items-center order-md-last">
+                <span class="icon-map"></span>
+              </div>
+              <div class="pr-md-4 pl-md-0 pl-3 text">
+                <p class="con"><span>Ligue Grátis</span> <span>+1 234 456 78910</span></p>
+                <p class="con">198 West 21th Street, Suite 721 New York NY 10016</p>
+              </div>
+            </div>
+            <div class="col-md-4 order-md-3 d-flex topper mb-md-0 align-items-center">
+              <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+              <div class="text pl-3 pl-md-3">
+                <p class="hr"><span>Horário de Funcionamento</span></p>
+                <p class="time"><span>Seg - Sáb:</span> <span>8:00am - 9:00pm</span> Dom: Fechado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container d-flex align-items-center">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item active"><a href="index.html" class="nav-link pl-0">Início</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link">Sobre</a></li>
+              <li class="nav-item"><a href="doctor.html" class="nav-link">Dentista</a></li>
+              <li class="nav-item"><a href="department.html" class="nav-link">Tratamentos</a></li>
+              <li class="nav-item"><a href="pricing.html" class="nav-link">Pagamento</a></li>
+              <li class="nav-item"><a href="calendario.html" class="nav-link">Calendário</a></li>
+              <li class="nav-item"><a href="Pagamento.html" class="nav-link">Pagamento</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Calendário -->
+    <div class="wrapper">
+        <div class="calendar-header">
+            <button id="prev-month">Anterior</button>
+            <select id="month-select"></select>
+            <select id="year-select"></select>
+            <button id="next-month">Próximo</button>
+        </div>
+        <div class="days-week">
+            <span>Segunda</span>
+            <span>Terça</span>
+            <span>Quarta</span>
+            <span>Quinta</span>
+            <span>Sexta</span>
+            <span>Sábado</span>
+            <span>Domingo</span>
+        </div>
+        <div class="number-days"></div>
+    </div>
+
+    <form id="date-form" action="submit-date" method="post" style="display: none;">
+        <input type="hidden" id="selected-date" name="selected-date">
+        <button type="submit">Salvar Data</button>
+    </form>
+
+    <script src="Calscripts.js"></script>
+</body>
+</html>
+<!-- 
+
+        populateMonthSelect();
+        populateYearSelect();
+        updateCalendar();
+
+        monthSelect.addEventListener('change', (e) => {
+            currentDate.setMonth(e.target.value);
+            updateCalendar();
+        });
+
+        yearSelect.addEventListener('change', (e) => {
+            currentDate.setFullYear(e.target.value);
+            updateCalendar();
+        });
+
+        prevMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            updateCalendar();
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            updateCalendar();
+        });
+    </script>
+</body>
+</html> -->
